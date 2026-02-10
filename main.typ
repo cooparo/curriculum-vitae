@@ -168,5 +168,5 @@ Computer Engineering graduate with practical experience in Bitcoin, Lightning Ne
 - *Technologies*: Proxmox, Docker, Tailscale, Git, UNIX, NixOS, OpenVPN
 
 == Languages
-- Italian: Native
 - English: IELTS 7.0
+- Italian: Native
