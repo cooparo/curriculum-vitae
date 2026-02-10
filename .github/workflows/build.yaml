@@ -30,13 +30,14 @@ jobs:
           path: Luca_Parolini.pdf
 
       - name: Bump version and push tag
+        id: tagger
         uses: anothrNick/github-tag-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload artifact to Release
         uses: softprops/action-gh-release@v2
-        # if: github.ref_type == 'tag'
         with:
+          tag_name: ${{ steps.tagger.outputs.new_tag }}
           files: Luca_Parolini.pdf
           make_latest: true
