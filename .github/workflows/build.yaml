@@ -21,11 +21,3 @@ jobs:
         with:
           name: Luca_Parolini
           path: Luca_Parolini.pdf
-
-      - name: Release PDF
-        uses: softprops/action-gh-release@v2
-        # if: github.ref_type == 'tag'
-        with:
-          tag_name: latest
-          name: Latest build
-          files: Luca_Parolini.zip
