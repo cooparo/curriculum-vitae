@@ -16,8 +16,27 @@ jobs:
         uses: typst-community/setup-typst@v4
       - run: typst compile main.typ Luca_Parolini.pdf
 
+      - name: Get date
+        uses: hudsonm62/datetime-action@v1
+        id: datetime
+        with:
+          timezone: Europe/Rome
+          format: yyyy-MM-dd
+
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
           name: Luca_Parolini
           path: Luca_Parolini.pdf
+
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload artifact to Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref_type == 'tag'
+        with:
+          files: Luca_Parolini.pdf
+          make_latest: true
