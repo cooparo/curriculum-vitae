@@ -42,7 +42,7 @@
 */
 
 == About me
-Computer Engineering graduate with practical experience in Bitcoin, Lightning Network and distributed systems. Systems and infrastructure skills with Nix/NixOS and Linux. All my knowledge is focused also on the cybersecurity.
+Computer engineer with practical experience in systems and infrastructure with Nix/NixOS and Linux. Felt in the Bitcoin/distributed systems rabbit hole. Cybersecurity focused. 
 
 == Education
 #edu(
@@ -51,7 +51,6 @@ Computer Engineering graduate with practical experience in Bitcoin, Lightning Ne
   dates: dates-helper(start-date: "Sep 2025", end-date: "Present"),
   degree: "MSc. Cybersecurity",
 )
-- Developed a P2P chat in Golang, development environment and package build managed through Nix. Implemented: Double Ratchet algorithm, gossip-oriented mechanism to support distributed peer discovery and information propagation and designed IPC protocol between the background daemon and the CLI.
 
 #edu(
   institution: "Polytechnic University of Turin",
@@ -68,7 +67,7 @@ Computer Engineering graduate with practical experience in Bitcoin, Lightning Ne
   dates: dates-helper(start-date: "Oct 2021", end-date: "Mar 2025"),
   degree: "BSc. Computer Engineering",
 )
-- Thesis: "Secure VPN authentication through Bitcoin and Blockchain: an implementation". A proof-of-concept that uses on-chain challenge–response authentication for OpenVPN. Built reproducible infrastructure and development environments with Nix; implemented the post-authentication script in Python and contributed documentation fixes to the OpenVPN project. See the source code on my GitHub profile.
+- Relevant coursework: Data Structures, Internet Security, Operative System, Embedded Systems
 
 // #edu(
 //   institution: "Harvey Mudd College",
@@ -124,7 +123,25 @@ Computer Engineering graduate with practical experience in Bitcoin, Lightning Ne
 // - Developed a cross-platform mobile app that turned every user into a potential paparazzi
 // - Led a security overhaul, heroically saving the company from the menace of "password123"
 
-// == Projects
+== Projects
+#project(
+  name: "Runtime attacks detection system",
+  dates: dates-helper(start-date: "Feb 2026", end-date: "Present"),
+)
+- Researching the mechanisms of sophisticated runtime attacks that compromise devices by manipulating execution flow without injecting new code. Developing a proof-of-concept attack and designed a novel detection algorithm to trace program execution for real-time protection.
+
+#project(
+  name: "P2P Secure Chat",
+  dates: dates-helper(start-date: "Sep 2025", end-date: "Dec 2025"),
+)
+- Developed in Golang with development environment and package build managed through Nix. Implemented: Double Ratchet algorithm, gossip-oriented mechanism to support distributed peer discovery and information propagation and designed IPC protocol between the background daemon and the CLI.
+
+#project(
+  name: "Secure VPN Authentication via Bitcoin and Blockchain",
+  dates: "Mar 2025",
+)
+- Proof-of-concept that uses on-chain challenge–response authentication for OpenVPN. Built reproducible infrastructure and development environments with Nix; implemented the post-authentication script in Python and contributed documentation fixes to the OpenVPN project.
+
 //
 // #project(
 //   name: "Hyperschedule",
@@ -139,8 +156,15 @@ Computer Engineering graduate with practical experience in Bitcoin, Lightning Ne
 //   - Manage PR reviews, bug fixes, and coordinate with college for releasing scheduling data and over \$1500 of yearly funding
 // - Ensure 99.99% uptime during peak loads of 1M daily requests during course registration through redundant servers
 
-// == Extracurricular Activities
-//
+== Extracurricular Activities
+
+#extracurriculars(
+  activity: "Homelab System Administration",
+  dates: dates-helper(start-date: "Jan 2022", end-date: "Present"),
+)
+- Self-host and maintain personal infrastructure running on Proxmox. Maintaining various services such as AdBlocker, local DNS, cloud photo storage, media services, VPN, and other personal services.
+- Manage declarative system configuration and deployment using Nix/NixOS across virtual machines and services.
+
 // #extracurriculars(
 //   activity: "Capture The Flag Competitions",
 //   dates: dates-helper(start-date: "Jan 2021", end-date: "Present"),
