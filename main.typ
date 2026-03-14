@@ -189,7 +189,7 @@ Computer engineer with practical experience in systems and infrastructure with N
 
 == Skills
 - *Programming Languages*: C/C++, Nix, Go, Java, Python
-- *Technologies*: Proxmox, Docker, Tailscale, Git, UNIX, NixOS, OpenVPN
+- *Technologies*: Agentic AI, Proxmox, Docker, Tailscale, Git, UNIX, NixOS, OpenVPN
 
 == Languages
 - English: IELTS 7.0
