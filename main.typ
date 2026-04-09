@@ -3,7 +3,7 @@
 // Put your personal information here, replacing mine
 #let name = "Luca Parolini"
 #let location = "København, DK"
-#let email = "pparolini@gmail.com"
+#let email = "pparolini1@gmail.com"
 #let github = "github.com/cooparo"
 #let linkedin = "linkedin.com/in/luca-parolini-40b98a202/"
 #let phone = "+45 71 89 57 74"
