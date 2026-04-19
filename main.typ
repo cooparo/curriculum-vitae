@@ -42,7 +42,7 @@
 */
 
 == About me
-Computer engineer with practical experience in systems and infrastructure with Nix/NixOS and Linux. Felt in the Bitcoin/distributed systems rabbit hole. Cybersecurity focused. 
+Computer Engineer and MSc Cybersecurity student with 4+ years running self-hosted infrastructure on Proxmox; managing DNS, VPN, storage, and services through declarative NixOS configuration. Seeking a DevOps student position where hands-on systems experience meets security engineering.
 
 == Education
 #edu(
@@ -59,7 +59,6 @@ Computer engineer with practical experience in systems and infrastructure with N
   degree: "Lifelong Learning Programme: Bitcoin, Lightning Network and Distributed systems Technologies",
 )
 - Practical and technical training covering Bitcoin fundamentals, protocol internals, cryptography, secure system development, and advanced Lightning Network design and implementations.
-- Engaged with industry experts including Adam Back, Peter Todd, Giacomo Zucco, Luke Dashjr, Tadge Dryja, and Christian Decker.
 
 #edu(
   institution: "University of Padua",
@@ -67,7 +66,7 @@ Computer engineer with practical experience in systems and infrastructure with N
   dates: dates-helper(start-date: "Oct 2021", end-date: "Mar 2025"),
   degree: "BSc. Computer Engineering",
 )
-- Relevant coursework: Data Structures, Internet Security, Operative System, Embedded Systems
+- Relevant coursework: Data Structures, Internet Security, Operating System, Embedded Systems
 
 // #edu(
 //   institution: "Harvey Mudd College",
@@ -81,8 +80,14 @@ Computer engineer with practical experience in systems and infrastructure with N
 // - Cumulative GPA: 4.0\/4.0 | Dean's List, Harvey S. Mudd Merit Scholarship, National Merit Scholarship
 // - Relevant Coursework: Data Structures, Program Development, Microprocessors, Abstract Algebra I: Groups and Rings, Linear Algebra, Discrete Mathematics, Multivariable & Single Variable Calculus, Principles and Practice of Comp Sci
 
-// == Work Experience
-//
+== Work Experience
+#work(
+  title: "Waiter",
+  location: "Venice, IT",
+  company: "Umana, SPA",
+  dates: dates-helper(start-date: "Jul 2023", end-date: "Jun 2025"),
+)
+- Delivered professional service across catering services in hotels, restaurants, and luxury events.
 // #work(
 //   title: "Subatomic Shepherd and Caffeine Connoisseur",
 //   location: "Atomville, CA",
@@ -128,7 +133,7 @@ Computer engineer with practical experience in systems and infrastructure with N
   name: "Runtime attacks detection system",
   dates: dates-helper(start-date: "Feb 2026", end-date: "Present"),
 )
-- Researching the mechanisms of sophisticated runtime attacks that compromise devices by manipulating execution flow without injecting new code. Developing a proof-of-concept attack and designed a novel detection algorithm to trace program execution for real-time protection.
+- Researching and developing a proof-of-concept attack and designed a novel detection algorithm to trace program execution for real-time protection.
 
 #project(
   name: "P2P Secure Chat",
@@ -140,7 +145,7 @@ Computer engineer with practical experience in systems and infrastructure with N
   name: "Secure VPN Authentication via Bitcoin and Blockchain",
   dates: "Mar 2025",
 )
-- Proof-of-concept that uses on-chain challenge–response authentication for OpenVPN. Built reproducible infrastructure and development environments with Nix; implemented the post-authentication script in Python and contributed documentation fixes to the OpenVPN project.
+- Bachelor thesis: proof-of-concept that uses on-chain challenge–response authentication for OpenVPN. Built reproducible infrastructure and development environments with Nix; implemented the post-authentication script in Python and contributed documentation fixes to the OpenVPN project.
 
 //
 // #project(
