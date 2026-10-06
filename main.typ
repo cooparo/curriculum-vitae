@@ -6,7 +6,7 @@
 #let email = "pparolini1@gmail.com"
 #let github = "github.com/cooparo"
 #let linkedin = "linkedin.com/in/luca-parolini-40b98a202/"
-#let phone = "+45 71 89 57 74"
+#let phone = "+39 349 255 0319"
 #let personal-site = "parox.dev"
 
 #show: resume.with(
@@ -42,7 +42,7 @@
 */
 
 == About me
-Computer Engineer and MSc Cybersecurity student with 4+ years running self-hosted infrastructure on Proxmox; managing DNS, VPN, storage, and services through declarative NixOS configuration. Seeking a DevOps student position where hands-on systems experience meets security engineering.
+Computer Engineer and MSc Cybersecurity student with 4+ years running self-hosted infrastructure on Proxmox; managing DNS, VPN, storage, and services through declarative NixOS configuration. Seeking an IT Infrastructure student position where hands-on systems experience meets security engineering.
 
 == Education
 #edu(
@@ -82,10 +82,10 @@ Computer Engineer and MSc Cybersecurity student with 4+ years running self-hoste
 
 == Work Experience
 #work(
-  title: "Waiter",
-  location: "Venice, IT",
-  company: "Umana, SPA",
-  dates: dates-helper(start-date: "Jul 2023", end-date: "Jun 2025"),
+  title: "Waiter & Barman",
+  location: "Venice, IT & København, DK",
+  company: "Umana, SPA & Elippa Bella",
+  dates: dates-helper(start-date: "Jul 2023", end-date: "Present"),
 )
 - Delivered professional service across catering services in hotels, restaurants, and luxury events.
 // #work(
@@ -133,19 +133,18 @@ Computer Engineer and MSc Cybersecurity student with 4+ years running self-hoste
   name: "Runtime attacks detection system",
   dates: dates-helper(start-date: "Feb 2026", end-date: "Present"),
 )
-- Researching and developing a proof-of-concept attack and designed a novel detection algorithm to trace program execution for real-time protection.
+- Researching and developing a proof-of-concept attack and designed a novel detection algorithm to trace program execution for real-time protection. See more #link("https://github.com/cooparo/runtime-attacks")[here].
 
 #project(
   name: "P2P Secure Chat",
   dates: dates-helper(start-date: "Sep 2025", end-date: "Dec 2025"),
 )
-- Developed in Golang with development environment and package build managed through Nix. Implemented: Double Ratchet algorithm, gossip-oriented mechanism to support distributed peer discovery and information propagation and designed IPC protocol between the background daemon and the CLI.
-
+- Developed in Golang with development environment and package build managed through Nix. Implemented: Double Ratchet algorithm, gossip-oriented mechanism to support distributed peer discovery and information propagation and designed IPC protocol between the background daemon and the CLI. See more #link("https://github.com/cooparo/secure-distributed-chat")[here].
 #project(
   name: "Secure VPN Authentication via Bitcoin and Blockchain",
   dates: "Mar 2025",
 )
-- Bachelor thesis: proof-of-concept that uses on-chain challenge–response authentication for OpenVPN. Built reproducible infrastructure and development environments with Nix; implemented the post-authentication script in Python and contributed documentation fixes to the OpenVPN project.
+- Bachelor thesis: proof-of-concept that uses on-chain challenge–response authentication for OpenVPN. Built reproducible infrastructure and development environments with Nix; implemented the post-authentication script in Python and contributed documentation fixes to the OpenVPN project. See more #link("https://github.com/cooparo/pas-bitcoin")[here]
 
 //
 // #project(
@@ -194,7 +193,7 @@ Computer Engineer and MSc Cybersecurity student with 4+ years running self-hoste
 
 == Skills
 - *Programming Languages*: C/C++, Nix, Go, Java, Python
-- *Technologies*: Agentic AI, Proxmox, Docker, Tailscale, Git, UNIX, NixOS, OpenVPN
+- *Technologies*: Agentic AI, Proxmox, Docker, Tailscale, Git, UNIX, Linux, NixOS, OpenVPN
 
 == Languages
 - English: IELTS 7.0
