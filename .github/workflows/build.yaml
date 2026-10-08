@@ -50,6 +50,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Rename PDFs with version
+        run: |
+          for f in pdfs/*.pdf; do
+            mv "$f" "${f%.pdf}_${{ steps.tagger.outputs.new_tag }}.pdf"
+          done
+
       - name: Upload artifacts to Release
         uses: softprops/action-gh-release@v2
         with:
