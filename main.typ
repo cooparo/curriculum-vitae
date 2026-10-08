@@ -9,6 +9,10 @@
 #let phone = "+39 349 255 0319"
 #let personal-site = "parox.dev"
 
+// Which CV flavor to render: "infra" (default) or "cybersec".
+// typst compile --input variant=cybersec main.typ Luca_Parolini_Cybersec.pdf
+#let variant = sys.inputs.at("variant", default: "infra")
+
 #show: resume.with(
   author: name,
   // All the lines below are optional.
@@ -42,7 +46,11 @@
 */
 
 == About me
-Computer Engineer and MSc Cybersecurity student with 4+ years running self-hosted infrastructure on Proxmox; managing DNS, VPN, storage, and services through declarative NixOS configuration. Seeking an IT Infrastructure student position where hands-on systems experience meets security engineering.
+#if variant == "cybersec" [
+MSc Cybersecurity student and Computer Engineer with 4+ years of hands-on systems experience running self-hosted infrastructure on Proxmox, managing DNS, VPN, storage, and services through declarative NixOS configuration. Seeking a Cybersecurity student position where systems depth meets security engineering.
+] else [
+Computer Engineer with 4+ years running self-hosted infrastructure on Proxmox — managing DNS, VPN, storage, and services through declarative NixOS configuration — and an MSc Cybersecurity student bringing a security-first mindset to systems design. Seeking an IT Infrastructure student position where hands-on systems experience meets security engineering.
+]
 
 == Education
 #edu(
@@ -82,12 +90,23 @@ Computer Engineer and MSc Cybersecurity student with 4+ years running self-hoste
 
 == Work Experience
 #work(
+  title: "GRC Intern",
+  location: "Full remote",
+  company: "SecuraTrack",
+  dates: dates-helper(start-date: "Sep 2026", end-date: "Dec 2026"),
+)
+#if variant == "cybersec" [
+- Mapped security controls and identified gaps across 30 cybersecurity and compliance frameworks, and designed a risk scoring model rating gap severity by control maturity, likelihood, and business impact.
+]
+
+#work(
   title: "Waiter & Barman",
   location: "Venice, IT & København, DK",
   company: "Umana, SPA & Elippa Bella",
   dates: dates-helper(start-date: "Jul 2023", end-date: "Present"),
 )
-- Delivered professional service across catering services in hotels, restaurants, and luxury events.
+- Delivered professional services in hotels, restaurants, and luxury events.
+
 // #work(
 //   title: "Subatomic Shepherd and Caffeine Connoisseur",
 //   location: "Atomville, CA",
@@ -129,11 +148,13 @@ Computer Engineer and MSc Cybersecurity student with 4+ years running self-hoste
 // - Led a security overhaul, heroically saving the company from the menace of "password123"
 
 == Projects
+#if variant == "cybersec" [
 #project(
   name: "Runtime attacks detection system",
   dates: dates-helper(start-date: "Feb 2026", end-date: "Present"),
 )
 - Researching and developing a proof-of-concept attack and designed a novel detection algorithm to trace program execution for real-time protection. See more #link("https://github.com/cooparo/runtime-attacks")[here].
+]
 
 #project(
   name: "P2P Secure Chat",
@@ -193,7 +214,11 @@ Computer Engineer and MSc Cybersecurity student with 4+ years running self-hoste
 
 == Skills
 - *Programming Languages*: C/C++, Nix, Go, Java, Python
-- *Technologies*: Agentic AI, Proxmox, Docker, Tailscale, Git, UNIX, Linux, NixOS, OpenVPN
+#if variant == "cybersec" [
+- *Technologies*: OpenVPN, Tailscale, Agentic AI, Proxmox, Docker, Git, UNIX, Linux, NixOS
+] else [
+- *Technologies*: Proxmox, Docker, Tailscale, Git, UNIX, Linux, NixOS, OpenVPN, Agentic AI
+]
 
 == Languages
 - English: IELTS 7.0
