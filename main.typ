@@ -6,7 +6,7 @@
 #let email = "pparolini1@gmail.com"
 #let github = "github.com/cooparo"
 #let linkedin = "linkedin.com/in/luca-parolini-40b98a202/"
-#let phone = "+39 349 255 0319"
+#let phone = "+45 71895774"
 #let personal-site = "parox.dev"
 
 // Which CV flavor to render: "infra" (default) or "cybersec".
@@ -26,7 +26,7 @@
   personal-site: personal-site,
   accent-color: "#26428b",
   font: "New Computer Modern",
-  paper: "us-letter",
+  paper: "a4",
   author-position: center,
   personal-info-position: center,
 )
