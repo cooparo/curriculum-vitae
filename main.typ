@@ -26,6 +26,7 @@
   personal-site: personal-site,
   accent-color: "#26428b",
   font: "New Computer Modern",
+  font-size: 9.5pt,
   paper: "a4",
   author-position: center,
   personal-info-position: center,
