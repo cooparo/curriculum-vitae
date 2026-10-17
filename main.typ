@@ -176,9 +176,9 @@ Computer Engineer with 4+ years running self-hosted infrastructure on Proxmox ma
 == Skills
 - *Programming Languages*: C/C++, Nix, Go, Java, Python
 #if variant == "cybersec" [
-- *Technologies*: OpenVPN, Tailscale, Agentic AI, Proxmox, Docker, Git, GitHub, UNIX, Linux, NixOS
+- *Technologies*: OpenVPN, Tailscale, Claude, Proxmox, Docker, Git, GitHub, UNIX, Linux, NixOS, Windows, M365
 ] else [
-- *Technologies*: Proxmox, Docker, Tailscale, Git, GitHub, UNIX, Linux, NixOS, OpenVPN, Agentic AI
+- *Technologies*: Proxmox, Docker, Tailscale, Git, GitHub, UNIX, Linux, NixOS, OpenVPN, Claude, Windows, M365
 ]
 
 == Languages
