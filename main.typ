@@ -57,7 +57,7 @@ Computer Engineer with 4+ years running self-hosted infrastructure on Proxmox ma
 #edu(
   institution: "Aalborg University",
   location: "København, DK",
-  dates: dates-helper(start-date: "Sep 2025", end-date: "Present"),
+  dates: dates-helper(start-date: "Sep 2025", end-date: "Jun 2027"),
   degree: "MSc. Cybersecurity",
 )
 
