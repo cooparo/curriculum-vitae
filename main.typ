@@ -47,7 +47,9 @@
 */
 
 == About me
-#if variant == "cybersec" [
+#if variant == "platform" [
+Computer Engineer with 4+ years owning and operating self-hosted production-style services on Proxmox (DNS, VPN, storage, media), built as reproducible infrastructure as code with NixOS. Writes Go and Python daily, works with Claude and agentic coding tools, and brings a security-first mindset as an MSc Cybersecurity student. Seeking a DevOps / Platform Engineer role focused on reliability, automation, and production ownership.
+] else if variant == "cybersec" [
 MSc Cybersecurity student and Computer Engineer with 4+ years of hands-on systems experience running self-hosted infrastructure on Proxmox, managing DNS, VPN, storage, and services through declarative NixOS configuration. Seeking a Cybersecurity student position where systems depth meets security engineering.
 ] else [
 Computer Engineer with 4+ years running self-hosted infrastructure on Proxmox managing DNS, VPN, storage, and services through declarative NixOS configuration and an MSc Cybersecurity student bringing a security-first mindset to systems design. Seeking an IT Infrastructure student position where hands-on systems experience meets security engineering.
@@ -117,6 +119,14 @@ Computer Engineer with 4+ years running self-hosted infrastructure on Proxmox ma
 - Researching and developing a proof-of-concept attack and designed a novel detection algorithm to trace program execution for real-time protection. See more #link("https://github.com/cooparo/runtime-attacks")[here].
 ]
 
+#if variant != "cybersec" [
+#project(
+  name: "OpenFanta",
+  dates: "2026",
+)
+- Open-source Go backend (AGPL-3.0) that ingests football provider data and computes Fantacalcio scores from rule sets stored as data, served via a read-only REST API. Built on PostgreSQL with sqlc and an OpenAPI spec, Nix flakes dev environment, Docker, and GitHub Actions CI. See more #link("https://github.com/cortomuso/openfanta")[here].
+]
+
 #project(
   name: "P2P Secure Chat",
   dates: dates-helper(start-date: "Sep 2025", end-date: "Dec 2025"),
@@ -148,8 +158,13 @@ Computer Engineer with 4+ years running self-hosted infrastructure on Proxmox ma
   activity: "Homelab System Administration",
   dates: dates-helper(start-date: "Jan 2022", end-date: "Present"),
 )
+#if variant == "platform" [
+- Own and operate services I and my household depend on daily on Proxmox: local DNS, ad blocking, VPN, cloud photo storage, and media services. I am the sole on-call, diagnosing and fixing outages across network, storage, and application layers.
+- Define the whole fleet as code with Nix/NixOS: virtual machines and services are declared, version-controlled in Git, and reproducibly rebuilt and deployed, with automation replacing manual changes.
+] else [
 - Self-host and maintain personal infrastructure running on Proxmox. Maintaining various services such as AdBlocker, local DNS, cloud photo storage, media services, VPN, and other personal services.
 - Manage declarative system configuration and deployment using Nix/NixOS across virtual machines and services.
+]
 
 // #extracurriculars(
 //   activity: "Capture The Flag Competitions",
@@ -174,8 +189,13 @@ Computer Engineer with 4+ years running self-hosted infrastructure on Proxmox ma
 // )
 
 == Skills
+#if variant == "platform" [
+- *Programming Languages*: Go, Python, Nix, C/C++, Java
+- *Technologies*: NixOS, Linux, Docker, Proxmox, Git, GitHub, Tailscale, OpenVPN, UNIX, Claude, Windows, M365
+] else [
 - *Programming Languages*: C/C++, Nix, Go, Java, Python
-#if variant == "cybersec" [
+]
+#if variant == "platform" [] else if variant == "cybersec" [
 - *Technologies*: OpenVPN, Tailscale, Claude, Proxmox, Docker, Git, GitHub, UNIX, Linux, NixOS, Windows, M365
 ] else [
 - *Technologies*: Proxmox, Docker, Tailscale, Git, GitHub, UNIX, Linux, NixOS, OpenVPN, Claude, Windows, M365
