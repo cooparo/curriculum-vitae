@@ -14,6 +14,10 @@ jobs:
             output: Luca_Parolini_Infra.pdf
           - variant: cybersec
             output: Luca_Parolini_Cybersec.pdf
+          - variant: sre
+            output: Luca_Parolini_SRE.pdf
+          - variant: platform
+            output: Luca_Parolini_Platform.pdf
 
     steps:
       - name: Checkout

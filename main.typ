@@ -9,7 +9,7 @@
 #let phone = "+45 71895774"
 #let personal-site = "parox.dev"
 
-// Which CV flavor to render: "infra" (default) or "cybersec".
+// Which CV flavor to render: "infra" (default), "cybersec", "sre" or "platform".
 // typst compile --input variant=cybersec main.typ Luca_Parolini_Cybersec.pdf
 #let variant = sys.inputs.at("variant", default: "infra")
 
@@ -51,6 +51,8 @@
 Computer Engineer with 4+ years owning and operating self-hosted production-style services on Proxmox (DNS, VPN, storage, media), built as reproducible infrastructure as code with NixOS. Writes Go and Python daily, works with Claude and agentic coding tools, and brings a security-first mindset as an MSc Cybersecurity student. Seeking a DevOps / Platform Engineer role focused on reliability, automation, and production ownership.
 ] else if variant == "cybersec" [
 MSc Cybersecurity student and Computer Engineer with 4+ years of hands-on systems experience running self-hosted infrastructure on Proxmox, managing DNS, VPN, storage, and services through declarative NixOS configuration. Seeking a Cybersecurity student position where systems depth meets security engineering.
+] else if variant == "sre" [
+Final-year MSc Cybersecurity student (graduating Jun 2027) and Computer Engineer with 4+ years designing, running and troubleshooting self-hosted infrastructure on Proxmox (virtualisation, DNS, VPN, storage, monitoring), all managed as code with declarative NixOS. Automation-first, scripting in Python and Go. Seeking a Site Reliability Engineering graduate role; open to relocating to Dublin.
 ] else [
 Computer Engineer with 4+ years running self-hosted infrastructure on Proxmox managing DNS, VPN, storage, and services through declarative NixOS configuration and an MSc Cybersecurity student bringing a security-first mindset to systems design. Seeking an IT Infrastructure student position where hands-on systems experience meets security engineering.
 ]
@@ -69,7 +71,9 @@ Computer Engineer with 4+ years running self-hosted infrastructure on Proxmox ma
   dates: dates-helper(start-date: "Feb 2025", end-date: "Jun 2025"),
   degree: "Lifelong Learning Programme: Bitcoin, Lightning Network and Distributed systems Technologies",
 )
+#if variant not in ("sre", "platform") [
 - Practical and technical training covering Bitcoin fundamentals, protocol internals, cryptography, secure system development, and advanced Lightning Network design and implementations.
+]
 
 #edu(
   institution: "University of Padua",
@@ -77,7 +81,7 @@ Computer Engineer with 4+ years running self-hosted infrastructure on Proxmox ma
   dates: dates-helper(start-date: "Oct 2021", end-date: "Mar 2025"),
   degree: "BSc. Computer Engineering",
 )
-- Relevant coursework: Data Structures, Internet Security, Operating System, Embedded Systems
+- Relevant coursework: Operating Systems, Computer Networks, Internet and Security, Computer Architecture, Databases, Data Structures and Algorithms, Embedded Systems Programming
 
 // #edu(
 //   institution: "Harvey Mudd College",
@@ -110,21 +114,60 @@ Computer Engineer with 4+ years running self-hosted infrastructure on Proxmox ma
 )
 - Delivered professional services in hotels, restaurants, and luxury events.
 
+// #extracurriculars(
+//   activity: "Capture The Flag Competitions",
+//   dates: dates-helper(start-date: "Jan 2021", end-date: "Present"),
+// )
+// - Founder of Les Amateurs (#link("https://amateurs.team")[amateurs.team]), currently ranked \#4 US, \#33 global on CTFTime (2023: \#4 US, \#42 global)
+// - Organized AmateursCTF 2023 and 2024, with 1000+ teams solving at least one challenge and \$2000+ in cash prizes
+//   - Scaled infrastructure using GCP, Digital Ocean with Kubernetes and Docker; deployed custom software on fly.io
+// - Qualified for DEFCON CTF 32 and CSAW CTF 2023, two of the most prestigious cybersecurity competitions globally
+
+// #extracurriculars(
+//   activity: "Science Olympiad Volunteering",
+//   dates: "Sep 2023 --- Present"
+// )
+// - Volunteer and write tests for tournaments, including LA Regionals and SoCal State \@ Caltech
+
+// #certificates(
+//   name: "OSCP",
+//   issuer: "Offensive Security",
+//   // url: "",
+//   date: "Oct 2024",
+// )
+
 == Projects
+#project(
+  name: "Homelab System Administration",
+  dates: dates-helper(start-date: "Jan 2022", end-date: "Present"),
+)
+#if variant == "platform" [
+- Own and operate services I and my household depend on daily on Proxmox: local DNS, ad blocking, VPN, cloud photo storage, and media services. I am the sole on-call, diagnosing and fixing outages across network, storage, and application layers.
+- Define the whole fleet as code with Nix/NixOS: virtual machines and services are declared, version-controlled in Git, and reproducibly rebuilt and deployed, with automation replacing manual changes.
+- Monitor services with Prometheus, Grafana and Uptime Kuma; automated NixOS upgrades keep hosts patched.
+] else if variant == "sre" [
+- Design, operate and troubleshoot Proxmox infrastructure across multiple VMs: local DNS with ad-blocking, VPN remote access, photo storage and media services.
+- Manage every host as code with Nix/NixOS for reproducible, version-controlled deployments and safe rollbacks.
+- Monitor with Prometheus, Grafana dashboards and Uptime Kuma alerts; automated NixOS upgrades keep hosts patched.
+] else [
+- Self-host and maintain personal infrastructure running on Proxmox. Maintaining various services such as AdBlocker, local DNS, cloud photo storage, media services, VPN, and other personal services.
+- Manage declarative system configuration and deployment using Nix/NixOS across virtual machines and services.
+- Monitor services with Prometheus, Grafana and Uptime Kuma; automated NixOS upgrades keep hosts patched.
+]
+
 #if variant == "cybersec" [
 #project(
   name: "Runtime attacks detection system",
   dates: dates-helper(start-date: "Feb 2026", end-date: "Present"),
 )
 - Researching and developing a proof-of-concept attack and designed a novel detection algorithm to trace program execution for real-time protection. See more #link("https://github.com/cooparo/runtime-attacks")[here].
-]
-
-#if variant != "cybersec" [
+] else [
 #project(
   name: "OpenFanta",
-  dates: "2026",
+  dates: dates-helper(start-date: "Oct 2026", end-date: "Present"),
 )
-- Open-source Go backend (AGPL-3.0) that ingests football provider data and computes Fantacalcio scores from rule sets stored as data, served via a read-only REST API. Built on PostgreSQL with sqlc and an OpenAPI spec, Nix flakes dev environment, Docker, and GitHub Actions CI. See more #link("https://github.com/cortomuso/openfanta")[here].
+- Open-source Go backend that ingests third-party football data into Postgres and serves computed fantasy scores over a REST API, shipped as a distroless, non-root container with Docker Compose and a Nix-pinned dev environment. See more #link("https://github.com/cortomuso/openfanta")[here].
+- Built for reliability: upstream client with timeouts, rate limiting and retries with exponential backoff and jitter; panic recovery, request timeouts and structured logging on the API; versioned migrations and auditable recomputation.
 ]
 
 #project(
@@ -152,50 +195,17 @@ Computer Engineer with 4+ years running self-hosted infrastructure on Proxmox ma
 //   - Manage PR reviews, bug fixes, and coordinate with college for releasing scheduling data and over \$1500 of yearly funding
 // - Ensure 99.99% uptime during peak loads of 1M daily requests during course registration through redundant servers
 
-== Extracurricular Activities
-
-#extracurriculars(
-  activity: "Homelab System Administration",
-  dates: dates-helper(start-date: "Jan 2022", end-date: "Present"),
-)
-#if variant == "platform" [
-- Own and operate services I and my household depend on daily on Proxmox: local DNS, ad blocking, VPN, cloud photo storage, and media services. I am the sole on-call, diagnosing and fixing outages across network, storage, and application layers.
-- Define the whole fleet as code with Nix/NixOS: virtual machines and services are declared, version-controlled in Git, and reproducibly rebuilt and deployed, with automation replacing manual changes.
-] else [
-- Self-host and maintain personal infrastructure running on Proxmox. Maintaining various services such as AdBlocker, local DNS, cloud photo storage, media services, VPN, and other personal services.
-- Manage declarative system configuration and deployment using Nix/NixOS across virtual machines and services.
-]
-
-// #extracurriculars(
-//   activity: "Capture The Flag Competitions",
-//   dates: dates-helper(start-date: "Jan 2021", end-date: "Present"),
-// )
-// - Founder of Les Amateurs (#link("https://amateurs.team")[amateurs.team]), currently ranked \#4 US, \#33 global on CTFTime (2023: \#4 US, \#42 global)
-// - Organized AmateursCTF 2023 and 2024, with 1000+ teams solving at least one challenge and \$2000+ in cash prizes
-//   - Scaled infrastructure using GCP, Digital Ocean with Kubernetes and Docker; deployed custom software on fly.io
-// - Qualified for DEFCON CTF 32 and CSAW CTF 2023, two of the most prestigious cybersecurity competitions globally
-
-// #extracurriculars(
-//   activity: "Science Olympiad Volunteering",
-//   dates: "Sep 2023 --- Present"
-// )
-// - Volunteer and write tests for tournaments, including LA Regionals and SoCal State \@ Caltech
-
-// #certificates(
-//   name: "OSCP",
-//   issuer: "Offensive Security",
-//   // url: "",
-//   date: "Oct 2024",
-// )
-
 == Skills
 #if variant == "platform" [
 - *Programming Languages*: Go, Python, Nix, C/C++, Java
-- *Technologies*: NixOS, Linux, Docker, Proxmox, Git, GitHub, Tailscale, OpenVPN, UNIX, Claude, Windows, M365
+- *Technologies*: NixOS, Linux, Docker, Proxmox, Prometheus, Grafana, Uptime Kuma, Git, GitHub, Tailscale, OpenVPN, UNIX, Claude, Windows, M365
+] else if variant == "sre" [
+- *Programming Languages*: Python, Go, Nix, C/C++, Java
+- *Technologies*: Linux, NixOS, Proxmox, Docker, Prometheus, Grafana, Uptime Kuma, Git, GitHub Actions, OpenVPN, Tailscale, UNIX, Windows, M365, Claude
 ] else [
 - *Programming Languages*: C/C++, Nix, Go, Java, Python
 ]
-#if variant == "platform" [] else if variant == "cybersec" [
+#if variant in ("sre", "platform") [] else if variant == "cybersec" [
 - *Technologies*: OpenVPN, Tailscale, Claude, Proxmox, Docker, Git, GitHub, UNIX, Linux, NixOS, Windows, M365
 ] else [
 - *Technologies*: Proxmox, Docker, Tailscale, Git, GitHub, UNIX, Linux, NixOS, OpenVPN, Claude, Windows, M365
